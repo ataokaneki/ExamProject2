@@ -14,7 +14,8 @@ public class Thief extends Character{
 
     private boolean guard;
     public void attack(Creature target){
-        System.out.println(this.getName() + getWeapon().attackMessage() + target.getName() + "に5のダメージを与えた！");
+        System.out.println(this.getName() + getWeapon().attackMessage() + target.getName() + "に"+getWeapon().getDamage()*2+"のダメージを与えた！");
+        //盗賊は素早く二回切り付けた
         target.setHp(target.getHp() - getWeapon().getDamage()*2);
     }
 

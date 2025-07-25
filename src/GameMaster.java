@@ -1,4 +1,7 @@
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.io.*;
+
 import creature.*;
 import creature.Character;
 import creature.character.*;
@@ -39,7 +42,14 @@ public class GameMaster {
         monsters.add(new Goblin(50, 'A'));
         monsters.add(new Slime(40, 'A'));
 
+        /*
+        Iterator<Monster> mIt = monsters.iterator();
+        Iterator<Character> cIt = party.iterator();*/
+
         while(!monsters.isEmpty() || !party.isEmpty()){  //死んで抜ける処理書いてないからエラー吐いてるだけだよ
+            Iterator<Monster> mIt = monsters.iterator();
+            Iterator<Character> cIt = party.iterator();
+
             System.out.println("---味方パーティ---");
             for (Character character : party) {
                 character.showStatus();
@@ -48,6 +58,11 @@ public class GameMaster {
             for (Monster monster : monsters) {
                 monster.showStatus();
             }
+
+            for (Character character : party) {
+
+                }
+            }
+
         }
     }
-}
