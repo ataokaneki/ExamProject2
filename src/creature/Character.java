@@ -24,8 +24,8 @@ public abstract class Character implements Creature {
 
     //getWeaponとかいるの？でもそうなったらどうすればいいかわからん
 
-    public String getWeapon(){
-        return weapon.getName();
+    public Weapon getWeapon(){
+        return weapon;
     }
 
     public void setWeapon(Weapon w){
@@ -37,7 +37,7 @@ public abstract class Character implements Creature {
     }
 
     public void showStatus() {
-        System.out.println(this.getName() + "：HP" + this.getHp());
+        System.out.println(this.getName() + "：HP " + this.getHp());
     }
 
     public void die(){
