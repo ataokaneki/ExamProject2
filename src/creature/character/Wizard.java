@@ -1,7 +1,7 @@
 package creature.character;
 
 import creature.Character;
-import creature.Creature;
+import creature.*;
 import weapon.*;
 
 public class Wizard extends Character {
@@ -16,6 +16,7 @@ public class Wizard extends Character {
 
     public void magic(Creature target) {
         if(this.mp > 0){  //this.mp > wand.getCost()じゃないの？
+            System.out.println(this.getName() + "は火の玉を放った！" + target.getName() + ((Monster)target).getSuffix() + "に3のダメージを与えた！");
             this.mp -= getWeapon().getCost();  //？？？
             target.setHp(target.getHp() - getWeapon().getDamage());
         }else{
@@ -24,7 +25,7 @@ public class Wizard extends Character {
     }
 
     public void attack(Creature target) {
-        System.out.println(getName()+"は石を投げた！"+target.getName()+"に3のダメージを与えた！");
+        System.out.println(getName()+"は石を投げた！"+target.getName()+ ((Monster)target).getSuffix() +"に3のダメージを与えた！");
         target.setHp(target.getHp() - 3);
     }
 

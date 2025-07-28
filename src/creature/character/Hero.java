@@ -1,5 +1,5 @@
 package creature.character;
-import creature.Creature;
+import creature.*;
 import creature.Character;
 import weapon.*;
 
@@ -7,7 +7,7 @@ public class Hero extends Character{
     //Sword sword = new Sword();
 
     public void attack(Creature target){
-        System.out.println(this.getName() + "は" + this.getWeapon().getName() + getWeapon().attackMessage() + target.getName() + "に10のダメージを与えた！");
+        System.out.println(this.getName() + "は" + this.getWeapon().getName() + getWeapon().attackMessage() + target.getName() + ((Monster)target).getSuffix() + "に10のダメージを与えた！");
         target.setHp(target.getHp()-getWeapon().getDamage());
     }
 
