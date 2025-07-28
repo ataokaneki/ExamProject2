@@ -1,6 +1,6 @@
 package creature.character;
 
-import creature.*;
+import creature.Creature;
 import creature.Character;
 import weapon.*;
 
@@ -14,7 +14,7 @@ public class Thief extends Character{
 
     private boolean guard;
     public void attack(Creature target){
-        System.out.println(this.getName() + getWeapon().attackMessage() + target.getName() + ((Monster)target).getSuffix() + "に5のダメージを与えた！");
+        System.out.println(this.getName() + getWeapon().attackMessage() + target.getName() + "に5のダメージを与えた！");
         target.setHp(target.getHp() - getWeapon().getDamage()*2);
     }
 
