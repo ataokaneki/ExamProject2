@@ -16,7 +16,7 @@ public class Wizard extends Character {
 
     public void magic(Creature target) {
         if(this.mp > 0){  //this.mp > wand.getCost()じゃないの？
-            System.out.println(this.getName() + "は火の玉を放った！" + target.getName() + ((Monster)target).getSuffix() + "に3のダメージを与えた！");
+            System.out.println(this.getName() + "は火の玉を放った！" + target.getName() + ((Monster)target).getSuffix() + "に"+getWeapon().getDamage()+"のダメージを与えた！");
             this.mp -= getWeapon().getCost();  //？？？
             target.setHp(target.getHp() - getWeapon().getDamage());
         }else{
